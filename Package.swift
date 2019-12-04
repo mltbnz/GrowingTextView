@@ -3,14 +3,19 @@ import PackageDescription
 
 let package = Package(
     name: "GrowingTextView",
-    dependencies: [
-        .package(url: "https://github.com/mltbnz/GrowingTextView", .exact("0.7.1"))
+    platforms: [
+        .iOS(.v9),
+    ],
+    products: [
+        .library(
+            name: "GrowingTextView", 
+            targets: ["GrowingTextView"]
+        )
     ],
     targets: [
         .target(
             name: "GrowingTextView",
-            path: "Sources",
-            dependencies: []
-        ),
+            path: "Sources"
+        )
     ]
 )
